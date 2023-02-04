@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    int output_file = open(argv[1], O_WRONLY);
+    int output_file = open(argv[1], O_WRONLY | O_CREAT | O_TRUNC);
 
     int pfd[2];
     pipe(pfd);

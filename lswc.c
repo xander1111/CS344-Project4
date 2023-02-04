@@ -17,13 +17,12 @@ int main(int argc, char const *argv[])
         close(pfd[1]);
 
         execlp("wc", "wc", "-l", NULL);
-    } else
-    {
-        dup2(pfd[1], 1);
-        close(pfd[0]);
-
-        execlp("ls", "ls", "-1a", NULL);
     }
-    
+
+    dup2(pfd[1], 1);
+    close(pfd[0]);
+
+    if (argc > 1) execlp("ls", "ls", "-1a", argv[1], NULL);
+    else execlp("ls", "ls", "-1a", NULL); 
 }
 

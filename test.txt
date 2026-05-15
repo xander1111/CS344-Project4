@@ -1,0 +1,7 @@
+lswc
+lswc.c
+README.md
+redirout
+redirout.c
+test2.txt
+test.txt
